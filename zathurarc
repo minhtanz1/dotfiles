@@ -1,4 +1,0 @@
-set synctex true
-# set synctex-editor-command "nvim +%{line} %{input}"
-set selection-clipboard clipboard
-set synctex-editor-command "vim --remote-silent -v --not-a-term -T dumb -c 'VimtexInverseSearch %{line} %{input}'"
