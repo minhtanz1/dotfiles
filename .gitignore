@@ -1,0 +1,11 @@
+.ssh/
+.gnupg/
+.env
+*.key
+*.pem
+*.crt
+*.p12
+
+.config/github-copilot/
+.config/gh/hosts.yml
+.config/git/credentials

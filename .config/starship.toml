@@ -1,0 +1,212 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+# ── General ─────────────────────────────
+format = """
+$fill$time
+[╭─](bold #7aa2f7)$os$hostname$battery$username\
+$directory$git_branch$git_status$git_metrics$git_commit\
+$aws$azure$gcloud$kubernetes$terraform\
+$docker_context$container\
+$nodejs$python$rust$golang$java$cpp$cmake\
+$package$jobs$shlvl$cmd_duration$status$shell
+[╰](bold #7aa2f7)$character
+"""
+
+# ── Core Style ─────────────────────────
+add_newline = false
+command_timeout = 1000
+
+# ── Prompt Character (NASA vibe) ───────
+[fill]
+symbol = "─"
+style = "dimmed #44475a"
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+format = "[$time]($style)"
+style = "bold #f1fa8c"
+[git_metrics]
+disabled = false
+format = "([+$added]($added_style) )([-$deleted]($deleted_style) )"
+added_style = "bold #50fa7b"
+deleted_style = "bold #ff5555"
+[jobs]
+symbol = "✦ "
+style = "bold #bd93f9"
+number_threshold = 1
+
+[shlvl]
+disabled = false
+symbol = "❯"
+style = "bold #6272a4"
+threshold = 2
+
+[character]
+success_symbol = "[➜](bold #7aa2f7)"
+error_symbol = "[✘](bold #ff5555)"
+vicmd_symbol = "[V](bold #ffd700)"
+
+# ── Directory (Clean & Engineering) ───
+[directory]
+style = "bold #7aa2f7"
+truncation_length = 4
+truncation_symbol = "…/"
+read_only = " 󰌾"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+# ── Git (Mission Control style) ───────
+[git_branch]
+symbol = " "
+style = "bold #c3e88d"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold #ff5555"
+format = "([$all_status]($style) )"
+
+[git_commit]
+tag_symbol = "  "
+style = "#ff79c6"
+
+# ── Cloud & Infrastructure ─────────────
+[aws]
+symbol = " "
+style = "bold #f9c22e"
+
+[azure]
+symbol = " "
+style = "bold #0078d4"
+
+[gcloud]
+symbol = "󱇶 "
+style = "bold #4285f4"
+
+[kubernetes]
+symbol = "󱃾 "
+style = "bold #326ce5"
+
+[terraform]
+symbol = " "
+style = "bold #7b68ee"
+
+[docker_context]
+symbol = " "
+style = "bold #2496ed"
+
+# ── Languages (Minimal & Relevant) ─────
+[python]
+symbol = " "
+style = "bold #4b8bbe"
+
+[rust]
+symbol = "󱘗 "
+style = "bold #dea584"
+
+[golang]
+symbol = " "
+style = "bold #00add8"
+
+# [cpp]
+# disabled = false
+# symbol = " "
+# style = "bold #519aba"
+
+[java]
+symbol = " "
+style = "bold #e76f00"
+
+[nodejs]
+symbol = " "
+style = "bold #68a063"
+
+[package]
+symbol = "󰏗 "
+style = "bold #a9a1e1"
+
+# ── System & Status ───────────────────
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "bold #8be9fd"
+
+[hostname]
+ssh_symbol = " "
+style = "bold #ff79c6"
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+
+[cmd_duration]
+min_time = 0          # hiện duration cho mọi lệnh, kể cả < 1s
+show_milliseconds = true # hiện cả ms nếu muốn chính xác
+style = "bold #f1fa8c"
+format = "[took \uf252 $duration]($style) "
+[status]
+symbol = " "
+style = "bold #ff5555"
+format = "[$symbol$common_meaning$signal_name$maybe_int]($style) "
+
+# ── Keep your existing symbols ─────────
+[buf]
+symbol = " "
+[bun]
+symbol = " "
+[cmake]
+symbol = " "
+[conda]
+symbol = " "
+[container]
+symbol = " "
+[crystal]
+symbol = " "
+[dart]
+symbol = " "
+[deno]
+symbol = " "
+[direnv]
+symbol = " "
+[dotnet]
+symbol = " "
+[elixir]
+symbol = " "
+[elm]
+symbol = " "
+[erlang]
+symbol = " "
+[fossil_branch]
+symbol = " "
+[guix_shell]
+symbol = " "
+[haskell]
+symbol = " "
+[haxe]
+symbol = " "
+[helm]
+symbol = " "
+[hg_branch]
+symbol = " "
+[lua]
+symbol = " "
+# [maven]
+# symbol = " "
+[memory_usage]
+symbol = "󰍛 "
+[nix_shell]
+symbol = " "
+[ocaml]
+symbol = " "
+[perl]
+symbol = " "
+[php]
+symbol = " "
+# [pixi]
+# symbol = "󰏗 "
+[purescript]
+symbol = " "
+[ruby]
+symbol = " "
+[swift]
+symbol = " "
+[zig]
+symbol = " "
