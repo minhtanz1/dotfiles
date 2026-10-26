@@ -128,3 +128,4 @@ export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$PATH
 # Flyline - enhanced Bash experience
 enable -f /home/minhtan/.local/lib/libflyline.so flyline
 # export TYPST_ROOT="$HOME"
+export PATH="$HOME/.local/bin:$PATH"
